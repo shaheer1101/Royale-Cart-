@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Panel - Product Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+<h1>🧑‍💻 Royale Cart Sales</h1>
+<button id="logoutBtn" class="logout">Logout</button>
+
+<!-- View-only table -->
+<table id="productTable">
+<thead>
+<tr>
+  <th>Name</th>
+  <th>Purchase</th>
+  <th>Sale</th>
+  <th>Profit</th>
+  <th>Comment</th>
+  <th>Date</th>
+</tr>
+</thead>
+<tbody></tbody>
+<tfoot>
+<tr class="totals">
+  <td colspan="2" id="totalPurchase">Total Purchase: 0</td>
+  <td colspan="2" id="totalProfit">Total Profit: 0</td>
+  <td colspan="2"></td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<script src="script.js"></script>
+<script>
+if(localStorage.getItem("role") !== "user"){
+  window.location.href = "login.html";
+}
+</script>
+</body>
+</html>
