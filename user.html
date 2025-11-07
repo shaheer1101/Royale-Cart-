@@ -8,13 +8,13 @@
 </head>
 <body>
 <div class="app-container">
-<h1>🧑‍💻 Royale Cart Sales </h1>
+<h1>🧑‍💻 User Panel</h1>
 <button id="logoutBtn" class="logout">Logout</button>
 
 <table id="productTable">
 <thead>
 <tr>
-  <th>S.No</th>
+  <th>Rank</th>
   <th>Name</th>
   <th>Sale Price</th>
   <th>Details</th>
@@ -22,11 +22,14 @@
 </thead>
 <tbody></tbody>
 <tfoot>
-<tr class="totals">
-  <td colspan="1" id="totalPurchase">Total Purchase: 0</td>
-  <td colspan="1" id="totalSale">Total Sale: 0</td>
-  <td colspan="1" id="totalProfit">Total Profit: 0</td>
-  <td></td>
+<tr>
+  <td colspan="4" style="text-align:center;">
+    <div class="footer-totals">
+      <div class="footer-box">💰 Total Purchase: <span id="totalPurchase">0</span></div>
+      <div class="footer-box">📈 Total Sale: <span id="totalSale">0</span></div>
+      <div class="footer-box">💵 Total Profit: <span id="totalProfit">0</span></div>
+    </div>
+  </td>
 </tr>
 </tfoot>
 </table>
@@ -36,6 +39,11 @@
 <div id="detailsPopup" class="overlay hidden">
   <div class="popup">
     <h2>📦 Product Details</h2>
+    <div class="popup-totals">
+      <div class="detail-box" id="popupTotalPurchase"></div>
+      <div class="detail-box" id="popupTotalSale"></div>
+      <div class="detail-box" id="popupTotalProfit"></div>
+    </div>
     <div id="detailsContent"></div>
     <button id="closeDetails">Close</button>
   </div>
@@ -45,14 +53,6 @@
 <script>
 if(localStorage.getItem("role") !== "user"){
   window.location.href = "index.html";
-}
-</script>
-</body>
-</html>
-<script src="script.js"></script>
-<script>
-if(localStorage.getItem("role") !== "user"){
-  window.location.href = "login.html";
 }
 </script>
 </body>
