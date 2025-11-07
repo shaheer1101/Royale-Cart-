@@ -15,6 +15,7 @@
   <input type="text" id="name" placeholder="Product Name">
   <input type="number" id="purchase" placeholder="Purchase Price">
   <input type="number" id="sale" placeholder="Sale Price">
+  <input type="number" id="quantity" placeholder="Quantity">
   <input type="text" id="comment" placeholder="Comments">
   <input type="date" id="date">
   <button id="addBtn">➕ Add Product</button>
@@ -25,9 +26,11 @@
 <table id="productTable">
 <thead>
 <tr>
+  <th>S.No</th>
   <th>Name</th>
   <th>Purchase</th>
   <th>Sale</th>
+  <th>Quantity</th>
   <th>Profit</th>
   <th>Comment</th>
   <th>Date</th>
@@ -38,6 +41,7 @@
 <tfoot>
 <tr class="totals">
   <td colspan="2" id="totalPurchase">Total Purchase: 0</td>
+  <td colspan="2" id="totalSale">Total Sale: 0</td>
   <td colspan="2" id="totalProfit">Total Profit: 0</td>
   <td colspan="3"></td>
 </tr>
@@ -45,7 +49,7 @@
 </table>
 </div>
 
-<!-- Popup Modal -->
+<!-- Delete Popup -->
 <div id="popupOverlay" class="overlay hidden">
   <div class="popup">
     <h2>⚠ Delete Product</h2>
@@ -60,7 +64,7 @@
 <script src="script.js"></script>
 <script>
 if(localStorage.getItem("role") !== "admin"){
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 </script>
 </body>
