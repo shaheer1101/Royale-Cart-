@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel - Product Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+<h1>👑 Admin Panel</h1>
+<button id="logoutBtn" class="logout">Logout</button>
+
+<div class="form-section">
+  <input type="text" id="name" placeholder="Product Name">
+  <input type="number" id="purchase" placeholder="Purchase Price">
+  <input type="number" id="sale" placeholder="Sale Price">
+  <input type="text" id="comment" placeholder="Comments">
+  <input type="date" id="date">
+  <button id="addBtn">➕ Add Product</button>
+</div>
+
+<input type="text" id="searchInput" placeholder="Search by name...">
+
+<table id="productTable">
+<thead>
+<tr>
+  <th>Name</th>
+  <th>Purchase</th>
+  <th>Sale</th>
+  <th>Profit</th>
+  <th>Comment</th>
+  <th>Date</th>
+  <th>Action</th>
+</tr>
+</thead>
+<tbody></tbody>
+<tfoot>
+<tr class="totals">
+  <td colspan="2" id="totalPurchase">Total Purchase: 0</td>
+  <td colspan="2" id="totalProfit">Total Profit: 0</td>
+  <td colspan="3"></td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<!-- Popup Modal -->
+<div id="popupOverlay" class="overlay hidden">
+  <div class="popup">
+    <h2>⚠ Delete Product</h2>
+    <p>Are you sure you want to delete this product?</p>
+    <div class="popup-buttons">
+      <button id="confirmDelete">Yes, Delete</button>
+      <button id="cancelDelete">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+if(localStorage.getItem("role") !== "admin"){
+  window.location.href = "login.html";
+}
+</script>
+</body>
+</html>
