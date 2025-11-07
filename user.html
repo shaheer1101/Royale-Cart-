@@ -8,32 +8,47 @@
 </head>
 <body>
 <div class="app-container">
-<h1>🧑‍💻 Royale Cart Sales</h1>
+<h1>🧑‍💻 Royale Cart Sales </h1>
 <button id="logoutBtn" class="logout">Logout</button>
 
-<!-- View-only table -->
 <table id="productTable">
 <thead>
 <tr>
+  <th>S.No</th>
   <th>Name</th>
-  <th>Purchase</th>
-  <th>Sale</th>
-  <th>Profit</th>
-  <th>Comment</th>
-  <th>Date</th>
+  <th>Sale Price</th>
+  <th>Details</th>
 </tr>
 </thead>
 <tbody></tbody>
 <tfoot>
 <tr class="totals">
-  <td colspan="2" id="totalPurchase">Total Purchase: 0</td>
-  <td colspan="2" id="totalProfit">Total Profit: 0</td>
-  <td colspan="2"></td>
+  <td colspan="1" id="totalPurchase">Total Purchase: 0</td>
+  <td colspan="1" id="totalSale">Total Sale: 0</td>
+  <td colspan="1" id="totalProfit">Total Profit: 0</td>
+  <td></td>
 </tr>
 </tfoot>
 </table>
 </div>
 
+<!-- Details Popup -->
+<div id="detailsPopup" class="overlay hidden">
+  <div class="popup">
+    <h2>📦 Product Details</h2>
+    <div id="detailsContent"></div>
+    <button id="closeDetails">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+if(localStorage.getItem("role") !== "user"){
+  window.location.href = "index.html";
+}
+</script>
+</body>
+</html>
 <script src="script.js"></script>
 <script>
 if(localStorage.getItem("role") !== "user"){
