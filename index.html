@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="app-container login">
-  <h1>🔐 Royale Cart Login</h1>
+  <h1>🔐 Login</h1>
   <div class="form-section">
     <input type="text" id="username" placeholder="Username">
     <input type="password" id="password" placeholder="Password">
@@ -24,7 +24,7 @@ const userBtn = document.getElementById("userBtn");
 loginBtn.addEventListener("click", ()=>{
     const u = document.getElementById("username").value.trim();
     const p = document.getElementById("password").value.trim();
-    if(u === "Qazi" && p === "Samaraqazi1"){
+    if(u === "Qazi" && p === "Samaraqazi"){
         localStorage.setItem("role","admin");
         window.location.href = "admin.html";
     } else{
@@ -34,6 +34,11 @@ loginBtn.addEventListener("click", ()=>{
 
 userBtn.addEventListener("click", ()=>{
     localStorage.setItem("role","user");
+   window.location.href = "user.html";   
+});
+</script>
+</body>
+</html>
     window.location.href = "user.html";
 });
 </script>
